@@ -6,7 +6,7 @@ import WebKit
  
  - Note: [How to get height of entire document with javascript](https://stackoverflow.com/questions/1145850/how-to-get-height-of-entire-document-with-javascript)
  */
-open class MarkdownView: UIView {
+open class MLMarkdownView: UIView {
     // 可能需要对外，提供截图的功能
     public var webView: WKWebView?
     
@@ -72,7 +72,7 @@ open class MarkdownView: UIView {
     @objc public func load(markdown: String?, enableImage: Bool = true) {
         guard let markdown = markdown else { return }
 
-        let bundle = Bundle(for: MarkdownView.self)
+        let bundle = Bundle(for: MLMarkdownView.self)
 
         var htmlName = "index"
 
@@ -177,7 +177,7 @@ open class MarkdownView: UIView {
 
 }
 
-extension MarkdownView: WKNavigationDelegate {
+extension MLMarkdownView: WKNavigationDelegate {
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         let script = "document.body.scrollHeight;"
         webView.evaluateJavaScript(script) { [weak self] result, error in
