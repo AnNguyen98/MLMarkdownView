@@ -6,9 +6,9 @@ Pod::Spec.new do |s|
   s.license       = { :type => "MIT", :file => "LICENSE" }
   s.author        = { "annguyen98" => "theannguyen98@gmail.com" }
   s.source        = { :git => "https://github.com/AnNguyen98/MLDropDown.git", :tag => "#{s.version}" }
-  s.source_files  = "MLMarkdownView/*.swift"
+  s.source_files  = "MLMarkdownView/*.{h,m,swift,xib}"
   s.resource_bundles = {
-    'MLMarkdownView' => ['webassets/dist/*']
+    'MLMarkdownView' => ['webassets/dist/*.{html,css,js}']
   }
   s.frameworks    = "Foundation"
   s.ios.deployment_target = "10.0"
